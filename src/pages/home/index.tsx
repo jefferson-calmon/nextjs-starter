@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 
-import Head from '../../components/Head';
+import { Head } from 'idon';
 
 import { HomeContainer } from './styles';
 
