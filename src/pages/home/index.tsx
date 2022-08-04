@@ -9,17 +9,18 @@ function Home(): JSX.Element {
 		<HomeContainer>
 			<Head title="Início" />
 
-            <h1>Home</h1>
+			<h1>Home</h1>
+
 		</HomeContainer>
 	);
 }
 
 export const getStaticProps: GetStaticProps = () => {
-    return {
-        props: {
-            data: {}
-        }
-    }
-}
+	return {
+		props: {
+			data: {},
+		},
+	};
+};
 
 export default Home;
