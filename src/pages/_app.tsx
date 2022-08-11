@@ -6,6 +6,7 @@ import { IdonProvider } from 'idon';
 
 import { app } from 'config/app';
 import { ThemeProvider, light } from 'theme';
+import { DataProvider } from 'contexts/DataContext';
 
 import { GlobalStyle } from '../styles/global';
 
@@ -16,8 +17,15 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
 
 		<DefaultSeo title={app.name} />
 
-		<IdonProvider app={app} theme={{ mainColor: '#000' }}>
-			<Component {...pageProps} />
+		<IdonProvider
+			config={{
+				appName: app.name,
+			}}
+			theme={{ mainColor: '#000' }}
+		>
+			<DataProvider>
+				<Component {...pageProps} />
+			</DataProvider>
 		</IdonProvider>
 	</ThemeProvider>
 );
