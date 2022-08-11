@@ -1,3 +1,7 @@
+import type { NextPage } from 'next';
+
 import Home from '../pages/home';
 
-export default Home;
+const Index: NextPage = () => <Home />;
+
+export default Index;

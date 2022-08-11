@@ -10,15 +10,12 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "firebase": "^9.9.2",
-    "framer-motion": "^7.0.1",
-    "idon": "^1.2.8",
+    "idon": "^1.1.7",
     "next": "^12.1.5",
     "next-seo": "^5.4.0",
     "pandora-tools": "^1.1.9",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "slugify": "^1.6.5",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

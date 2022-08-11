@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 
-import { Head, Redirect } from 'idon';
+import { Head } from 'idon';
 
 import { HomeContainer } from './styles';
 
@@ -9,7 +9,8 @@ function Home(): JSX.Element {
 		<HomeContainer>
 			<Head title="Início" />
 
-			<Redirect to="1" />
+			<h1>Home</h1>
+
 		</HomeContainer>
 	);
 }
