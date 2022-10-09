@@ -16,7 +16,12 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
 
 		<DefaultSeo title={app.name} />
 
-		<IdonProvider app={app} theme={{ mainColor: '#000' }}>
+		<IdonProvider
+			config={{
+				appName: app.name,
+			}}
+			theme={{ mainColor: '#000' }}
+		>
 			<Component {...pageProps} />
 		</IdonProvider>
 	</ThemeProvider>
