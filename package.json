@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "idon": "^1.1.7",
-    "next": "^12.1.5",
+    "idon": "^1.2.27",
+    "next": "^12.3.1",
     "next-seo": "^5.4.0",
     "pandora-tools": "^1.1.9",
     "react": "18.1.0",
