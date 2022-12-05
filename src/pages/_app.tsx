@@ -5,26 +5,41 @@ import { PandoraConfig } from 'pandora-tools';
 import { IdonProvider } from 'idon';
 
 import { app } from 'config/app';
-import { ThemeProvider, light } from 'theme';
+import { useTheme } from 'hooks/useTheme';
+import { ThemeProvider as AppThemeProvider } from 'contexts/ThemeContext';
+import { ThemeProvider as StyledThemeProvider } from 'styles/index';
 
 import { GlobalStyle } from '../styles/global';
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
-	<ThemeProvider theme={light}>
-		<GlobalStyle />
-		<PandoraConfig />
+function MyApp(appProps: AppProps): JSX.Element {
+	return (
+		<AppThemeProvider>
+			<Container {...appProps} />
+		</AppThemeProvider>
+	);
+}
 
-		<DefaultSeo title={app.name} />
+const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
+	// Hooks
+	const theme = useTheme();
 
-		<IdonProvider
-			config={{
-				appName: app.name,
-			}}
-			theme={{ mainColor: '#000' }}
-		>
-			<Component {...pageProps} />
-		</IdonProvider>
-	</ThemeProvider>
-);
+	return (
+		<StyledThemeProvider theme={theme}>
+			<GlobalStyle />
+			<PandoraConfig />
+
+			<DefaultSeo title={app.name} />
+
+			<IdonProvider
+				config={{
+					appName: app.name,
+				}}
+				theme={{ mainColor: '#000' }}
+			>
+				<Component {...pageProps} />
+			</IdonProvider>
+		</StyledThemeProvider>
+	);
+};
 
 export default MyApp;

@@ -1,9 +1,4 @@
-import { useTheme as useStyledTheme } from 'styled-components';
+import { useContext } from 'react';
+import { ThemeContext, ThemeContextData } from 'contexts/ThemeContext';
 
-import { Theme } from 'models/Theme';
-
-export const useTheme = (): Theme => {
-	const theme = useStyledTheme();
-
-	return theme;
-};
+export const useTheme = (): ThemeContextData => useContext(ThemeContext);
