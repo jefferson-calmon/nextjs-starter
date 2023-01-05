@@ -1,4 +1,5 @@
 export const app = {
+    id: 'nextjs-base-project',
     name: 'App',
     description: '',
     site: '',

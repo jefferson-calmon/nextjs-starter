@@ -15,8 +15,4 @@ export const Firestore = firestore.getFirestore(app);
 export const Auth = auth.getAuth(app);
 export const Storage = storage.getStorage(app);
 
-export const dbPath = (path: string): database.DatabaseReference =>
-	database.ref(Database, path);
-
-export const storagePath = (path: string): storage.StorageReference =>
-	storage.ref(Storage, path);
+export * from './admin'
