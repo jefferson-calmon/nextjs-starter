@@ -11,8 +11,6 @@ async function handler(
 	try {
         const routes = [routeQuery].flat(Infinity) as string[];
 
-        return res.json(routes)
-
         await Promise.all(routes.map(async route => await res.revalidate(route)));
 
 		return res.json({ revalidated: true, routes });
