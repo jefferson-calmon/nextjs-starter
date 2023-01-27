@@ -1,16 +1,11 @@
 import * as admin from 'firebase-admin';
-import { getApp, getApps, cert, App } from 'firebase-admin/app';
+import { getApp, getApps, cert } from 'firebase-admin/app';
 
 import serviceAccount from '../../../service-account.json';
 import { firebaseConfig } from '../../../firebaseConfig';
 
-interface GetAdminReturn {
-    admin: typeof admin;
-    app: App;
-}
-
-export function getAdmin(): GetAdminReturn {
-	if (!getApps().find(app => app.name === 'server')) {
+export function getAdmin() {
+	if (!getApps().find((app) => app.name === 'server')) {
 		admin.initializeApp(
 			{
 				credential: cert(serviceAccount as admin.ServiceAccount),
@@ -20,10 +15,17 @@ export function getAdmin(): GetAdminReturn {
 		);
 	}
 
-	const adminApp = getApp('server');
+	const app = getApp('server');
+	const database = admin.database(app);
+	const storage = admin.storage(app);
+	const auth = admin.auth(app);
+    const firestore = admin.firestore(app);
 
 	return {
-		admin,
-		app: adminApp,
+		app,
+		database,
+		storage,
+		auth,
+        firestore
 	};
 }

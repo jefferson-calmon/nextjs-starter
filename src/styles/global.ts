@@ -7,7 +7,7 @@ const globalStyle = createGlobalStyle`
         outline: none;
         border: none;
         box-sizing: border-box;
-        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        font-family: 'Inter', Arial, sans-serif;
     }
 
     :root {
@@ -21,9 +21,25 @@ const globalStyle = createGlobalStyle`
 
         --color-background: ${({ theme }) => theme.colors.background};
 
-        --gradient: var(--color-primary), var(--color-secondary);
+        --color-red-1: #e83f5b;
+        --color-red-2: #ce4a4a;
+        --color-red-3: #eb3223;
 
-        --color-error: #e83f5b;
+        --color-green-1: #00875f;
+        --color-green-2: #00b37e;
+        --color-green-3: #015f43;
+        --color-green-4: #00291d;
+        --color-green-5: #00875f;
+        --color-green-6: #04d361;
+
+        --color-line: #e7e7e9;
+
+        /* Fonts */
+        --text-size: 1.6rem;
+        --title-size: 3.2rem;
+
+        /* Sizes */
+        --border-radius: .4rem;
     }
 
     ::-webkit-scrollbar {
@@ -48,6 +64,7 @@ const globalStyle = createGlobalStyle`
 
     body.active {
         overflow: hidden;
+        font-size: var(--text-size);
     }
 
     html, body, #root {
@@ -91,34 +108,48 @@ const globalStyle = createGlobalStyle`
         background: rgba(0, 0, 0, .5);
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1024px) {
         html {
-            font-size: 9px;
+            font-size: 10px;
         }
 
         .content {
-            width: 80%;
+            width: 91%;
         }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 834px) {
         html {
-            font-size: 8px;
+            font-size: 10px;
+        }
+
+        .content {
+            width: 91%;
         }
     }
 
     @media (max-width: 768px) {
         html {
-            font-size: 7px;
+            font-size: 10px;
         }
+
         .content {
-            width: 90%;
+            width: 91%;
         }
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 540px) {
+        :root {
+            --text-size: 15px;
+            --title-size: 24px;
+        }
+
         html {
-            font-size: 6px;
+            font-size: 9.5px;
+        }
+
+        .content {
+            width: 90%;
         }
     }
 `;

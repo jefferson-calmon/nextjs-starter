@@ -25,8 +25,8 @@ export const light: Theme = {
 		background: '#ffffff',
 		surface: '#f1f3f4',
 
-		title: '#000000',
-		text: '#333333',
+		title: 'rgb(0 0 0 / 100%)',
+		text: 'rgb(0 0 0 / 75%)',
 	},
 };
 

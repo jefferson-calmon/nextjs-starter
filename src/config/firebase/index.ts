@@ -10,9 +10,9 @@ if (!firebase.getApps().length) firebase.initializeApp(firebaseConfig);
 
 export const app = firebase.getApp();
 
-export const Database = database.getDatabase(app);
-export const Firestore = firestore.getFirestore(app);
 export const Auth = auth.getAuth(app);
 export const Storage = storage.getStorage(app);
+export const Database = database.getDatabase(app);
+export const Firestore = firestore.getFirestore(app);
 
-export * from './admin'
+export * from './utils';
