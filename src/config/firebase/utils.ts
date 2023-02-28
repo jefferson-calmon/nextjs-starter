@@ -1,19 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as database from 'firebase/database';
 import * as storage from 'firebase/storage';
 
-import { Storage, Database } from ".";
+import { Storage, Database } from '.';
 
-export const dbRef = (path: string) => database.ref(Database, path);
+const dbRef = (...paths: string[]) => database.ref(Database, paths.join('/'));
 
-export const storageRef = (path: string) => storage.ref(Storage, path);
+const storageRef = (path: string) => storage.ref(Storage, path);
 
-export const dbQuery = (...paths: string[]) => {
-    const path = paths.join('/');
-    const ref = dbRef(path);
+const dbQuery = (...paths: string[]) => {
+	const path = paths.join('/');
+	const ref = dbRef(path);
 
-    return {
-        get: () => database.get(ref),
-        set: (value: any) => database.set(ref, value),
-        update: (values: object) => database.update(ref, values),
-    }
-}
+	return {
+		get: () => database.get(ref),
+		set: (value: any) => database.set(ref, value),
+		update: (values: object) => database.update(ref, values),
+	};
+};
+
+export { dbRef, storageRef, dbQuery };

@@ -38,6 +38,24 @@ const globalStyle = createGlobalStyle`
         --text-size: 1.6rem;
         --title-size: 3.2rem;
 
+        /* Fonts variantions */
+        --text-size-1: calc(var(--text-size) - .1rem);
+        --text-size-2: calc(var(--text-size) - .2rem);
+        --text-size-3: calc(var(--text-size) - .3rem);
+        --text-size-4: calc(var(--text-size) - .4rem);
+        --text-size-5: calc(var(--text-size) - .5rem);
+        --text-size-6: calc(var(--text-size) - .6rem);
+        --text-size-7: calc(var(--text-size) - .7rem);
+        --text-size-8: calc(var(--text-size) - .8rem);
+        --text-size+1: calc(var(--text-size) + .1rem);
+        --text-size+2: calc(var(--text-size) + .2rem);
+        --text-size+3: calc(var(--text-size) + .3rem);
+        --text-size+4: calc(var(--text-size) + .4rem);
+        --text-size+5: calc(var(--text-size) + .5rem);
+        --text-size+6: calc(var(--text-size) + .6rem);
+        --text-size+7: calc(var(--text-size) + .7rem);
+        --text-size+8: calc(var(--text-size) + .8rem);
+
         /* Sizes */
         --border-radius: .4rem;
     }
@@ -76,7 +94,7 @@ const globalStyle = createGlobalStyle`
     }
 
     h1, h2, h3, h4, h5, h6 {
-    color: ${({ theme }) => theme.colors.title};
+        color: ${({ theme }) => theme.colors.title};
     }
 
     a {
