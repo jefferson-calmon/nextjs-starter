@@ -8,6 +8,7 @@ import { app } from 'config/app';
 import { useTheme } from 'hooks/useTheme';
 import { ThemeProvider as AppThemeProvider } from 'contexts/ThemeContext';
 import { ThemeProvider as StyledThemeProvider } from 'styles/index';
+import { ContextProviders } from 'contexts';
 
 import { GlobalStyle } from '../styles/global';
 
@@ -36,7 +37,9 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 				}}
 				theme={{ mainColor: '#000' }}
 			>
-				<Component {...pageProps} />
+				<ContextProviders>
+					<Component {...pageProps} />
+				</ContextProviders>
 			</IdonProvider>
 		</StyledThemeProvider>
 	);
