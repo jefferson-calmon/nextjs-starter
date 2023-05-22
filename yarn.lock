@@ -137,12 +137,24 @@
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
+"@emotion/is-prop-valid@^0.8.2":
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
+  integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
+  dependencies:
+    "@emotion/memoize" "0.7.4"
+
 "@emotion/is-prop-valid@^1.1.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz#7f2d35c97891669f7e276eb71c83376a5dc44c83"
   integrity sha512-3aDpDprjM0AwaxGE09bOPkNxHpBd+kA6jty3RnaEXdweX1DF1U3VQpPYb0g1IStAuK7SVQ1cy+bNBBKp4W3Fjg==
   dependencies:
     "@emotion/memoize" "^0.8.0"
+
+"@emotion/memoize@0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
+  integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
 "@emotion/memoize@^0.8.0":
   version "0.8.0"
@@ -1112,6 +1124,11 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
+"@types/js-cookie@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.3.tgz#d6bfbbdd0c187354ca555213d1962f6d0691ff4e"
+  integrity sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==
+
 "@types/json-schema@^7.0.9":
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
@@ -1682,6 +1699,11 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crypto-js@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
+  integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
 
 css-color-keywords@^1.0.0:
   version "1.0.0"
@@ -2328,6 +2350,15 @@ form-data@^4.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+framer-motion@^10.12.12:
+  version "10.12.12"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.12.12.tgz#24c3620520f225e446972c42cad1c94d6ce70bbc"
+  integrity sha512-DDCqp60U6hR7aUrXj/BXc/t0Sd/U4ep6w/NZQkw898K+u7s+Vv/P8yxq4WTNA86kU9QCsqOgn1Qhz2DpYK0Oag==
+  dependencies:
+    tslib "^2.4.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -2652,10 +2683,10 @@ idb@7.0.1:
   resolved "https://registry.yarnpkg.com/idb/-/idb-7.0.1.tgz#d2875b3a2f205d854ee307f6d196f246fea590a7"
   integrity sha512-UUxlE7vGWK5RfB/fDwEGgRf84DY/ieqNha6msMV99UsEMQhJ1RwbCd8AYBj3QMgnE3VZnfQvm4oKVCJTYlqIgg==
 
-idon@^1.2.33:
-  version "1.2.33"
-  resolved "https://registry.yarnpkg.com/idon/-/idon-1.2.33.tgz#20f0c81896d38e25581a212f9f4adf30e089f67c"
-  integrity sha512-eKPk0F0uc1tL/AYihtLQs7rdHaXN8RkrBRJtDszJ53b7u/8Imn8ZHmIHW/fc1kiSlOJt2+mXaL7NBCGcO4LImA==
+idon@^1.2.37:
+  version "1.2.37"
+  resolved "https://registry.yarnpkg.com/idon/-/idon-1.2.37.tgz#0ca1b657a40630cc3afe3ee0b64808a4b8cbe140"
+  integrity sha512-sFHSrBqlWLkUPf3m0MMzZQch18J4tmSkSpA32O37j8NSAKEZyhCTDyprA+DY6GF8IhFiRJ/MTcslLDBH/GRf6A==
   dependencies:
     "@material-ui/core" "^4.12.4"
     "@types/react-input-mask" "^3.0.1"
@@ -3489,12 +3520,11 @@ pandora-tools@^1.3.5:
   dependencies:
     react-dom "17.0.2"
 
-pandora-tools@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/pandora-tools/-/pandora-tools-1.4.2.tgz#9c369cb565370365afbfec8f00a2d627ae4fa552"
-  integrity sha512-UR4VvxL7lfsBDXXLbRMvJDuksmQe2cbulrsqvgkMc+Ixlu4FBV49FJ1ilrWspg5YxnNM8pm6wSnh3qvZfqAKHA==
+pandora-tools@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/pandora-tools/-/pandora-tools-1.4.7.tgz#32f4b814590f7dab3079bc082a0d404d6e9aa89c"
+  integrity sha512-3vIw8p6/Oc+mcHp7sqlTP3SF7rA+acbGMrZsgk2fZPynSoaGaiTSp0CpZDBXG66T5icm6iGWw6P1FiXvCbtDjQ==
   dependencies:
-    react-dom "17.0.2"
     slugify "^1.6.5"
 
 parent-module@^1.0.0:

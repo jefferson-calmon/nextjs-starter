@@ -1,13 +1,27 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as database from 'firebase/database';
 
 import { dbRef } from 'config/firebase';
+import { handleObject } from 'utils/CryptoJSAES';
 
-class BaseController<T> {
-	constructor(basePath: string) {
+interface Options<T> {
+	encrypt?: boolean | keyof T | (keyof T)[];
+}
+
+export interface OnResult<T> {
+	data: database.DataSnapshot;
+	array: T[];
+	object: T;
+}
+
+class BaseController<T extends Record<string, any>> {
+	constructor(basePath: string, options?: Options<T>) {
 		this.basePath = basePath;
+		this.encrypt = options?.encrypt || false;
 	}
 
 	private basePath = '';
+	private encrypt: Options<T>['encrypt'] = false;
 
 	async index() {
 		const dataDbRef = dbRef(this.basePath);
@@ -15,7 +29,12 @@ class BaseController<T> {
 		const datas = await database
 			.get(dataDbRef)
 			.then((snap) => snap.val())
-			.then((data) => Object.values<T>(data || {}));
+			.then((data) => Object.values<T>(data || {}))
+			.then((data) =>
+				data.map((item) =>
+					handleObject<T>('decrypt', item, this.encrypt)
+				)
+			);
 
 		return datas;
 	}
@@ -27,13 +46,19 @@ class BaseController<T> {
 			.get(dataDbRef)
 			.then((snap) => snap.val() as T | null);
 
-		return data;
+		if (!data) return null;
+
+		const newData = handleObject('decrypt', data, this.encrypt);
+
+		return newData;
 	}
 
 	async create(data: T & Record<'id', string>) {
 		const dataDbRef = dbRef(this.basePath, data.id);
 
-		await database.set(dataDbRef, data);
+		const newData = handleObject('encrypt', data, this.encrypt);
+
+		await database.set(dataDbRef, newData);
 	}
 
 	async update(dataId: string, data: Partial<T>) {
@@ -44,7 +69,13 @@ class BaseController<T> {
 			updatedAt: new Date().toISOString(),
 		};
 
-		await database.update(dataDbRef, newData);
+		const newData1 = handleObject<typeof newData>(
+			'encrypt',
+			newData,
+			this.encrypt
+		);
+
+		await database.update(dataDbRef, newData1);
 	}
 
 	async delete(dataId: string) {
@@ -59,12 +90,29 @@ class BaseController<T> {
 		await database.set(dataDbRef, dataObj);
 	}
 
-	on(path: string, callback: (snapshot: database.DataSnapshot) => void) {
+	on(path: string, callback: (result: OnResult<T>) => void) {
 		const dataDbRef = dbRef(this.basePath, path);
 
-		database.onValue(dataDbRef, callback);
+		const cb = (snapshot: database.DataSnapshot) => {
+			const data = snapshot.val();
 
-		return () => database.off(dataDbRef, 'value', callback);
+			if (!data) throw new Error('Data not found');
+
+			const object = handleObject('decrypt', data, this.encrypt);
+			const array = Object.values(object).map((item) =>
+				handleObject('decrypt', item, this.encrypt)
+			);
+
+			callback({
+				data: snapshot,
+				array,
+				object,
+			});
+		};
+
+		database.onValue(dataDbRef, cb);
+
+		return () => database.off(dataDbRef, 'value', cb);
 	}
 }
 
