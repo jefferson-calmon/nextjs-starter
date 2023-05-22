@@ -1,11 +1,5 @@
-export const basePaths = {
-    /* Example:
-        user: 'users',
-    */
-};
+import ExampleController from "./ExampleController";
 
 export const controllers = {
-    /* Example:
-        user: new UserController(basePaths.user),
-    */
+    example: new ExampleController(),
 };
