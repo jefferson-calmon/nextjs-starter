@@ -1,13 +1,4 @@
-export type FirebaseErrors = Record<string, string>;
-
-export interface FirebaseError {
-	name: string;
-	code: keyof FirebaseErrors;
-	message: string;
-	stack?: string;
-}
-
-export const errors: FirebaseErrors = {
+export const errors = {
 	// Auth
 	'auth/wrong-password': 'Sua senha está incorreta.',
 	'auth/user-disabled':
