@@ -8,6 +8,8 @@ const globalStyle = createGlobalStyle`
         border: none;
         box-sizing: border-box;
         font-family: 'Inter', Arial, sans-serif;
+
+        -webkit-tap-highlight-color: transparent;
     }
 
     :root {
@@ -37,24 +39,6 @@ const globalStyle = createGlobalStyle`
         /* Fonts */
         --text-size: 1.6rem;
         --title-size: 3.2rem;
-
-        /* Fonts variantions */
-        --text-size-1: calc(var(--text-size) - .1rem);
-        --text-size-2: calc(var(--text-size) - .2rem);
-        --text-size-3: calc(var(--text-size) - .3rem);
-        --text-size-4: calc(var(--text-size) - .4rem);
-        --text-size-5: calc(var(--text-size) - .5rem);
-        --text-size-6: calc(var(--text-size) - .6rem);
-        --text-size-7: calc(var(--text-size) - .7rem);
-        --text-size-8: calc(var(--text-size) - .8rem);
-        --text-size+1: calc(var(--text-size) + .1rem);
-        --text-size+2: calc(var(--text-size) + .2rem);
-        --text-size+3: calc(var(--text-size) + .3rem);
-        --text-size+4: calc(var(--text-size) + .4rem);
-        --text-size+5: calc(var(--text-size) + .5rem);
-        --text-size+6: calc(var(--text-size) + .6rem);
-        --text-size+7: calc(var(--text-size) + .7rem);
-        --text-size+8: calc(var(--text-size) + .8rem);
 
         /* Sizes */
         --border-radius: .4rem;
@@ -158,7 +142,7 @@ const globalStyle = createGlobalStyle`
 
     @media (max-width: 540px) {
         :root {
-            --text-size: 15px;
+            --text-size: 16px;
             --title-size: 24px;
         }
 
@@ -167,7 +151,7 @@ const globalStyle = createGlobalStyle`
         }
 
         .content {
-            width: 90%;
+            width: 89%;
         }
     }
 `;
