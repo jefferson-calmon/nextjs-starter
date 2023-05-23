@@ -15,4 +15,10 @@ export const Storage = storage.getStorage(app);
 export const Database = database.getDatabase(app);
 export const Firestore = firestore.getFirestore(app);
 
+export const getAuth = () => auth.getAuth(app);
+export const getStorage = () => storage.getStorage(app);
+export const getDatabase = () => database.getDatabase(app);
+export const getFirestore = () => firestore.getFirestore(app);
+
 export * from './utils';
+export * from './types';

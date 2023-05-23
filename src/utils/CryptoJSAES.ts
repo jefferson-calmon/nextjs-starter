@@ -13,7 +13,7 @@ export function decrypt(value: string) {
 	return CryptoJS.AES.decrypt(value, key).toString(CryptoJS.enc.Utf8);
 }
 
-export function handleObject<T extends Record<string, any>>(
+function processObject<T extends Record<string, any>>(
 	action: 'encrypt' | 'decrypt',
 	obj: T,
 	properties?: boolean | keyof T | (keyof T)[]
@@ -55,4 +55,18 @@ export function handleObject<T extends Record<string, any>>(
 	}
 
 	return object;
+}
+
+export function encryptObject<T extends Record<string, any>>(
+	obj: T,
+	properties?: boolean | keyof T | (keyof T)[]
+): T {
+	return processObject<T>('encrypt', obj, properties);
+}
+
+export function decryptObject<T extends Record<string, any>>(
+	obj: T,
+	properties?: boolean | keyof T | (keyof T)[]
+): T {
+	return processObject<T>('decrypt', obj, properties);
 }

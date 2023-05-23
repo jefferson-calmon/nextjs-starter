@@ -3,14 +3,17 @@ import * as database from 'firebase/database';
 import * as firestore from 'firebase/firestore';
 import * as storage from 'firebase/storage';
 
-import * as T from './types';
+import { FirestoreQueryOptions } from './types';
 import { Storage, Database, Firestore } from '.';
 
 const dbRef = (...paths: string[]) => database.ref(Database, paths.join('/'));
 
 const storageRef = (path: string) => storage.ref(Storage, path);
 
-function firestoreQuery(path: string, options: T.FirestoreQueryOptions) {
+function firestoreQuery<T extends Record<string, any>>(
+	path: string,
+	options: FirestoreQueryOptions<T>
+) {
 	const { where, orderBy, limit, startAfter, endBefore } = firestore;
 
 	const queryConstraints = [
@@ -26,7 +29,7 @@ function firestoreQuery(path: string, options: T.FirestoreQueryOptions) {
 
 	function getFiltersQueries() {
 		return (options.filters || []).map((filter) => {
-			const { field, operator, value } = filter;
+			const [field, operator, value] = filter;
 			return where(field, operator, value);
 		});
 	}
@@ -34,4 +37,10 @@ function firestoreQuery(path: string, options: T.FirestoreQueryOptions) {
 	return query;
 }
 
-export { dbRef, storageRef, firestoreQuery };
+function firestoreRef(basePath: string, ...paths: string[]) {
+	const documentReference = firestore.doc(Firestore, basePath, ...paths);
+
+	return documentReference;
+}
+
+export { dbRef, storageRef, firestoreQuery, firestoreRef };
