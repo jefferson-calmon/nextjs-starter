@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 import { Head } from 'idon';
 
 import { HomeContainer } from './styles';
+import { Button } from 'aresui';
 
 function Home(): JSX.Element {
 	return (
@@ -10,7 +11,7 @@ function Home(): JSX.Element {
 			<Head title="Início" />
 
 			<h1>Home</h1>
-
+			<Button rippleEffect>Teste</Button>
 		</HomeContainer>
 	);
 }
