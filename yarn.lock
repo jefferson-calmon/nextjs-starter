@@ -1399,14 +1399,6 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-aresui@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/aresui/-/aresui-1.0.3.tgz#1f87be973f1b3dd248e1f0eca22c0384fae659f0"
-  integrity sha512-Q1/CeJ5U90rcE4WDxAvvxqDzrIPnAXegF7Y33EN5CN68e6QWUZ/70TSannKnxykLqalxY3pPLs98NULr7H49TA==
-  dependencies:
-    pandora-tools "^1.4.12"
-    polished "^4.2.2"
-
 argparse@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
@@ -3539,18 +3531,6 @@ pandora-tools@^1.4.11:
   integrity sha512-MhZpumHYZrJdtjvcYs40AVGRRpgo9RYPorPmlWFLexoosybDuZdBeh4X0lH8FOGU4QAghymhEVXJ5fKarQw1kg==
   dependencies:
     slugify "^1.6.5"
-
-pandora-tools@^1.4.12:
-  version "1.4.12"
-  resolved "https://registry.yarnpkg.com/pandora-tools/-/pandora-tools-1.4.12.tgz#3d3255c490ee53595e58f18069a08d1b4b23ced9"
-  integrity sha512-izLOkdhr39h6YtwOSVsNZuxG5G2cczZMmF+LNNdoTsUlmHUIDwH6hztQF7ngYgQDMzxJuRmSoPQwSALnquFZ1Q==
-  dependencies:
-    slugify "^1.6.5"
-
-pandory@^1.2.37:
-  version "1.2.37"
-  resolved "https://registry.yarnpkg.com/pandory/-/pandory-1.2.37.tgz#88116678af31448dec23c02a7a9ba72389472445"
-  integrity sha512-xLmExER3ey4Ynv2bb8RaNiEYfUbZEG5WaRY7kXDYFaBAFnpUwrun5JKNe0oAGsOZZrAtoLvcSoI9uF4gf1x+Pw==
 
 parent-module@^1.0.0:
   version "1.0.1"
