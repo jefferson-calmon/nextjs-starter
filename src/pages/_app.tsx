@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 
 import { DefaultSeo } from 'next-seo';
 import { PandoraConfig } from 'pandora-tools';
-import { IdonProvider } from 'idon';
+import { AresUIProvider } from 'aresui';
 
 import { app } from 'config/app';
 import { useTheme } from 'hooks/useTheme';
@@ -31,16 +31,11 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 
 			<DefaultSeo title={app.name} />
 
-			<IdonProvider
-				config={{
-					appName: app.name,
-				}}
-				theme={{ mainColor: '#000' }}
-			>
+			<AresUIProvider config={{ app }} theme={{  }}>
 				<ContextProviders>
 					<Component {...pageProps} />
 				</ContextProviders>
-			</IdonProvider>
+			</AresUIProvider>
 		</StyledThemeProvider>
 	);
 };

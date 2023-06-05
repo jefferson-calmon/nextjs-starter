@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 
-import { Head } from 'idon';
+import { Head } from 'aresui';
 
 import { HomeContainer } from './styles';
 
