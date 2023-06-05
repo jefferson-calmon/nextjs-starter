@@ -1,13 +1,16 @@
-import aresui from 'aresui';
+import {
+	Button as AresUIButton,
+	ButtonProps as AresUIButtonProps,
+} from 'aresui';
 
 import { ButtonContainer } from './styles';
 
-type ButtonProps = aresui.ButtonProps;
+type ButtonProps = AresUIButtonProps;
 
 function Button(props: ButtonProps) {
 	return (
 		<ButtonContainer className="button">
-			<aresui.Button {...props} />
+			<AresUIButton {...props} />
 		</ButtonContainer>
 	);
 }

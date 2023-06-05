@@ -1,13 +1,13 @@
-import aresui from 'aresui';
+import { Input as AresUIInput, InputProps as AresUIInputProps } from 'aresui';
 
 import { InputContainer } from './styles';
 
-type InputProps = aresui.InputProps;
+type InputProps = AresUIInputProps;
 
 function Input(props: InputProps) {
 	return (
 		<InputContainer className="input">
-			<aresui.Input {...props} />
+			<AresUIInput {...props} />
 		</InputContainer>
 	);
 }

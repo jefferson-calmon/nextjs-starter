@@ -31,7 +31,16 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 
 			<DefaultSeo title={app.name} />
 
-			<AresUIProvider config={{ app }} theme={{  }}>
+			<AresUIProvider
+				config={{ app }}
+				theme={{
+					colors: {
+						primary: theme.colors.primary,
+                        background: theme.colors.background,
+                        line: theme.colors.line,
+					},
+				}}
+			>
 				<ContextProviders>
 					<Component {...pageProps} />
 				</ContextProviders>

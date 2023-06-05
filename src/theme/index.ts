@@ -9,7 +9,7 @@ export const dark: Theme = {
 
 		background: '#101010',
 		surface: '#16191C',
-        line: '',
+		line: '',
 
 		title: '#FFFFFF',
 		text: '#ADB5BD',
@@ -20,12 +20,12 @@ export const light: Theme = {
 	name: 'light',
 
 	colors: {
-		primary: '',
+		primary: '#000',
 		secondary: '',
 
 		background: '#ffffff',
 		surface: '#f1f3f4',
-        line: '#e7e7e9',
+		line: '#e7e7e9',
 
 		title: 'rgb(0 0 0 / 100%)',
 		text: 'rgb(0 0 0 / 75%)',
