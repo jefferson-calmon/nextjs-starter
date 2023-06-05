@@ -22,6 +22,7 @@ const globalStyle = createGlobalStyle`
         --color-text: ${({ theme }) => theme.colors.text};
 
         --color-background: ${({ theme }) => theme.colors.background};
+        --color-line: ${({ theme }) => theme.colors.line};
 
         --color-red-1: #e83f5b;
         --color-red-2: #ce4a4a;
@@ -34,7 +35,6 @@ const globalStyle = createGlobalStyle`
         --color-green-5: #00875f;
         --color-green-6: #04d361;
 
-        --color-line: #e7e7e9;
 
         /* Fonts */
         --text-size: 1.6rem;

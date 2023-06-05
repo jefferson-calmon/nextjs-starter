@@ -7,6 +7,7 @@ export interface Theme {
 
     background: string;
     surface: string;
+    line: string;
 
     title: string;
     text: string;
