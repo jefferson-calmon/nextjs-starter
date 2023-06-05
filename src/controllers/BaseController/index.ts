@@ -8,7 +8,7 @@ import {
 	FirestoreQueryOptions,
 	firestoreRef,
 } from 'config/firebase';
-import { decryptObject, encryptObject } from 'utils/CryptoJSAES';
+import { decryptObject, encryptObject } from './utils/crypto';
 
 interface Options<T> {
 	encrypt?: boolean | keyof T | (keyof T)[];
