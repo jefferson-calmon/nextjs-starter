@@ -1,6 +1,7 @@
 import {
 	Button as AresUIButton,
 	ButtonProps as AresUIButtonProps,
+    defaultPropsButton
 } from 'aresui';
 
 import { ButtonContainer } from './styles';
@@ -14,5 +15,7 @@ function Button(props: ButtonProps) {
 		</ButtonContainer>
 	);
 }
+
+Button.defaultProps = defaultPropsButton;
 
 export default Button;

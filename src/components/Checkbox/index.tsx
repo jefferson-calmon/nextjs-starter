@@ -1,6 +1,7 @@
 import {
 	Checkbox as AresUICheckbox,
 	CheckboxProps as AresUICheckboxProps,
+    defaultPropsCheckbox
 } from 'aresui';
 
 import { CheckboxContainer } from './styles';
@@ -14,5 +15,7 @@ function Checkbox(props: CheckboxProps) {
 		</CheckboxContainer>
 	);
 }
+
+Checkbox.defaultProps = defaultPropsCheckbox;
 
 export default Checkbox;
