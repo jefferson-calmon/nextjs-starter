@@ -46,6 +46,7 @@ export default class MyDocument extends Document {
 				<Head>
 					<meta charSet="utf-8" />
 					<meta name="theme-color" content="#ffffff" />
+					<meta name="keywords" content={app.keywords.join(', ')} />
 					<meta name="description" content={app.description} />
 					<meta name="robots" content="index, follow" />
 					<meta
