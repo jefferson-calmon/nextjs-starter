@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import { DefaultSeo } from 'next-seo';
-import { PandoraConfig } from 'codekit';
+import { CodeKitConfig } from 'codekit';
 import { AresUIProvider } from 'aresui';
 
 import { app } from 'config/app';
@@ -27,7 +27,7 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 	return (
 		<StyledThemeProvider theme={theme}>
 			<GlobalStyle />
-			<PandoraConfig />
+			<CodeKitConfig />
 
 			<DefaultSeo title={app.name} />
 
@@ -36,8 +36,8 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 				theme={{
 					colors: {
 						primary: theme.colors.primary,
-                        background: theme.colors.background,
-                        line: theme.colors.line,
+						background: theme.colors.background,
+						line: theme.colors.line,
 					},
 				}}
 			>
