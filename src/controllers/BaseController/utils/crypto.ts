@@ -2,7 +2,7 @@
 import { crypto } from 'pandora-tools';
 
 type O = Record<string, any>;
-type Props<T> = [object: T, criteria?: boolean | keyof T | (keyof T)[]];
+type Props<T> = [obj: T, criteria?: boolean | keyof T | (keyof T)[]];
 
 export function encryptObject<T extends O>(...props: Props<T>): T {
 	const [object, criteria] = props;
