@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import { DefaultSeo } from 'next-seo';
-import { PandoraConfig } from 'pandora-tools';
+import { PandoraConfig } from 'codekit';
 import { AresUIProvider } from 'aresui';
 
 import { app } from 'config/app';

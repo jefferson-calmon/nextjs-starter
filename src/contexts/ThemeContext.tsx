@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 
 import { Theme } from '../models/Theme';
 import { themes } from '../theme';
-import { useIsomorphicLayoutEffect } from 'pandora-tools';
+import { useIsomorphicLayoutEffect } from 'codekit';
 
 interface ThemeContextProps {
 	children: React.ReactNode;

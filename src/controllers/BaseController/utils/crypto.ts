@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { crypto } from 'pandora-tools';
+import { crypto } from 'codekit';
 
 type O = Record<string, any>;
 type Props<T> = [obj: T, criteria?: boolean | keyof T | (keyof T)[]];
