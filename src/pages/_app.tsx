@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { CodeKitConfig } from 'codekit';
 import { AresUIProvider, NavigationProgressBar } from 'aresui';
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 import { app } from 'config/app';
 import { useTheme } from 'hooks/useTheme';
@@ -11,6 +12,7 @@ import { ThemeProvider as StyledThemeProvider } from 'styles/index';
 import { ContextProviders } from 'contexts';
 
 import { GlobalStyle } from '../styles/global';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function MyApp(appProps: AppProps): JSX.Element {
 	return (
@@ -42,9 +44,11 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 					},
 				}}
 			>
-				<ContextProviders>
-					<Component {...pageProps} />
-				</ContextProviders>
+				<SkeletonTheme>
+				    <ContextProviders>
+    					<Component {...pageProps} />
+    				</ContextProviders>
+				</SkeletonTheme>
 			</AresUIProvider>
 		</StyledThemeProvider>
 	);
