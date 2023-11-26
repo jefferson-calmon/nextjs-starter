@@ -37,11 +37,11 @@ const globalStyle = createGlobalStyle`
 
 
         /* Fonts */
-        --text-size: 1.6rem;
-        --title-size: 3.2rem;
+        --text-size: 1rem;
+        --title-size: 2rem;
 
         /* Sizes */
-        --border-radius: .4rem;
+        --border-radius: .25rem;
     }
 
     ::-webkit-scrollbar {
@@ -60,7 +60,6 @@ const globalStyle = createGlobalStyle`
     }
 
     html {
-        font-size: 10px;
         scroll-behavior: smooth;
     }
 
@@ -111,45 +110,24 @@ const globalStyle = createGlobalStyle`
     }
 
     @media (max-width: 1024px) {
-        html {
-            font-size: 10px;
-        }
-
         .content {
             width: 91%;
         }
     }
 
     @media (max-width: 834px) {
-        html {
-            font-size: 10px;
-        }
-
         .content {
             width: 91%;
         }
     }
 
     @media (max-width: 768px) {
-        html {
-            font-size: 10px;
-        }
-
         .content {
             width: 91%;
         }
     }
 
     @media (max-width: 540px) {
-        :root {
-            --text-size: 16px;
-            --title-size: 24px;
-        }
-
-        html {
-            font-size: 9.5px;
-        }
-
         .content {
             width: 89%;
         }
