@@ -1077,12 +1077,13 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-aresui@^1.0.89:
-  version "1.0.89"
-  resolved "https://registry.yarnpkg.com/aresui/-/aresui-1.0.89.tgz#0813e0794563da71494cc032297995c48312e7bd"
-  integrity sha512-1pw3dhJwfgPJkK88SIEZAu4B5ylDTYKZdzs2okEz0A8wgNgdaX/na0lXnjIBfCtL1L3NUJQmtpvf6xZpvAzfjQ==
+aresui@^1.0.92:
+  version "1.0.92"
+  resolved "https://registry.yarnpkg.com/aresui/-/aresui-1.0.92.tgz#8c459079e5808ff96f43900eaa2a5c18059dd0ed"
+  integrity sha512-V2ITmvzpS59T9t8pUVMQyy91fkvZmz6UfkVaVIK0U65gNNJ9a1QuAtu3zeGRWGJZvY9R+n93/dSUyz5808YZ2A==
   dependencies:
     codekit "^1.6.12"
+    nprogress "^0.2.0"
     polished "^4.2.2"
     react-dropzone "^14.2.3"
     react-input-mask "^2.0.4"
@@ -2622,6 +2623,11 @@ jose@^4.14.6:
   resolved "https://registry.yarnpkg.com/jose/-/jose-4.15.4.tgz#02a9a763803e3872cf55f29ecef0dfdcc218cc03"
   integrity sha512-W+oqK4H+r5sITxfxpSU+MMdr/YSWGvgZMQDIsNoBDGGy4i7GBPTtvFKibQzW06n3U3TqHjhvBJsirShsEJ6eeQ==
 
+js-cookie@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.5.tgz#0b7e2fd0c01552c58ba86e0841f94dc2557dcdbc"
+  integrity sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==
+
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -3060,6 +3066,11 @@ node-forge@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-1.3.1.tgz#be8da2af243b2417d5f646a770663a92b7e9ded3"
   integrity sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==
 
 object-assign@^4.1.1:
   version "4.1.1"

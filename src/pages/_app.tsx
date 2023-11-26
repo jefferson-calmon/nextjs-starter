@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 
 import { DefaultSeo } from 'next-seo';
 import { CodeKitConfig } from 'codekit';
-import { AresUIProvider } from 'aresui';
+import { AresUIProvider, NavigationProgressBar } from 'aresui';
 
 import { app } from 'config/app';
 import { useTheme } from 'hooks/useTheme';
@@ -30,6 +30,7 @@ const Container = ({ Component, pageProps }: AppProps): JSX.Element => {
 			<CodeKitConfig />
 
 			<DefaultSeo title={app.name} />
+			<NavigationProgressBar color={theme.colors.primary} />
 
 			<AresUIProvider
 				config={{ app }}
