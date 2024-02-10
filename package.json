@@ -11,7 +11,7 @@
 	"dependencies": {
 		"aresui": "^1.0.104",
 		"axios": "^1.4.0",
-		"codekit": "^1.6.33",
+		"codekit": "^1.6.34",
 		"firebase": "^10.1.0",
 		"firebase-admin": "^12.0.0",
 		"framer-motion": "^11.0.3",

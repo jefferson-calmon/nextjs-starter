@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { AppProps } from 'next/app';
 
 import { DefaultSeo } from 'next-seo';
@@ -5,6 +6,7 @@ import { CodeKitConfig } from 'codekit';
 import { AresUIProvider, NavigationProgressBar } from 'aresui';
 import { SkeletonTheme } from 'react-loading-skeleton';
 
+import LoadingFullScreen from 'components/LoadingFullscreen';
 import { app } from 'config/app';
 import { useTheme } from 'hooks/useTheme';
 import { ThemeProvider as AppThemeProvider } from 'contexts/ThemeContext';
@@ -16,9 +18,11 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 function MyApp(appProps: AppProps): JSX.Element {
 	return (
-		<AppThemeProvider>
-			<Container {...appProps} />
-		</AppThemeProvider>
+		<Suspense fallback={<LoadingFullScreen />}>
+		    <AppThemeProvider>
+    			<Container {...appProps} />
+    		</AppThemeProvider>
+		</Suspense>
 	);
 }
 

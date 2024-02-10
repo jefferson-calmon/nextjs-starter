@@ -4,4 +4,6 @@ export const references = {
 	'/': {},
 	'#': {},
 	'*': {},
+
+    'logout': {},
 };
