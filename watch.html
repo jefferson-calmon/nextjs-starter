@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Next.js Server Handler</title>
+	</head>
+	<body></body>
+
+	<script>
+		const port = '{{ PORT }}';
+		const host = `http://localhost:${port}`;
+
+		let tries = 0;
+		let interval;
+
+		function connect() {
+			tries++;
+
+			const log = (msg) => console.log(['[+]', msg].join(' '));
+
+			fetch(host, {
+				mode: 'no-cors',
+			})
+				.then(() => {
+					log(`Tentativa de conexão #${tries} bem sucedida 🚀`);
+
+					clearInterval(interval);
+					window.location = host;
+				})
+				.catch(() => log(`Tentativa de conexão #${tries} falhou ❌`));
+		}
+
+		interval = setInterval(connect, 2500);
+	</script>
+</html>
