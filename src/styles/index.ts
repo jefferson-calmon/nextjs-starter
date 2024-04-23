@@ -1,11 +1,7 @@
-import {
-	DefaultTheme,
-	ThemeProvider as ThemeProviderComponent,
-	ThemeProviderProps,
-} from 'styled-components';
+import { ThemeProvider as ThemeProviderComponent } from 'styled-components';
+
+type ThemeProviderProps = Parameters<typeof ThemeProviderComponent>['0'];
 
 export const ThemeProvider = ThemeProviderComponent as unknown as (
-	props: ThemeProviderProps<AnyIfEmpty<DefaultTheme>>
+	props: ThemeProviderProps
 ) => JSX.Element;
-
-type AnyIfEmpty<T extends object> = keyof T extends never ? unknown : T;

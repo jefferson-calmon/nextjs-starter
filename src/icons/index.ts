@@ -1,5 +1,5 @@
-import * as FeatherIcons from 'react-icons/fi';
+import * as LucideIcon from 'lucide-react';
 
 export const Icons = {
-	...FeatherIcons,
+	...LucideIcon,
 };
