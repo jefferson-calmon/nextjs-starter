@@ -1,8 +1,4 @@
-import {
-	Input as AresUIInput,
-	InputProps as AresUIInputProps,
-	defaultPropsInput,
-} from 'aresui';
+import { Input as AresUIInput, InputProps as AresUIInputProps } from 'aresui';
 
 import { InputContainer } from './styles';
 
@@ -15,7 +11,5 @@ function Input(props: InputProps) {
 		</InputContainer>
 	);
 }
-
-Input.defaultProps = defaultPropsInput;
 
 export default Input;

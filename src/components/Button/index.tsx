@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 import {
 	Button as AresUIButton,
 	ButtonProps as AresUIButtonProps,
-	defaultPropsButton,
 } from 'aresui';
 
 import { Route, routes } from 'config/routes';
@@ -11,7 +10,7 @@ import { Route, routes } from 'config/routes';
 import { ButtonContainer } from './styles';
 
 export interface ButtonProps extends AresUIButtonProps {
-	linkTo: Route;
+	linkTo?: Route;
 }
 
 function Button(props: ButtonProps) {
@@ -30,7 +29,5 @@ function Button(props: ButtonProps) {
 		</ButtonContainer>
 	);
 }
-
-Button.defaultProps = defaultPropsButton;
 
 export default Button;

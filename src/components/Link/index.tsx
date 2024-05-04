@@ -1,10 +1,6 @@
 import { useMemo } from 'react';
 
-import {
-	Link as AresUILink,
-	LinkProps as AresUILinkProps,
-	defaultPropsLink,
-} from 'aresui';
+import { Link as AresUILink, LinkProps as AresUILinkProps } from 'aresui';
 
 import { Route, routes } from 'config/routes';
 
@@ -30,7 +26,5 @@ function Link<K extends string = Route>(props: LinkProps<K>) {
 		</LinkContainer>
 	);
 }
-
-Link.defaultProps = defaultPropsLink;
 
 export default Link;
