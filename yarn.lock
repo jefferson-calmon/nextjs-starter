@@ -1473,10 +1473,10 @@ codekit@^2.0.0:
   dependencies:
     crypto-js "^4.1.1"
 
-codekit@^2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/codekit/-/codekit-2.0.9.tgz#6c4e1f2df45cff17dd398a2a232aa98f9fe9160c"
-  integrity sha512-bMuouMvu5Gv+lPHAJRZ7oGOLQd7QwTPtFVndhtEI6cbdb9d2r3EzByHw71J+v5ye3nhVOZ9czdpo+Y06IuZPqQ==
+codekit@^2.0.17:
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/codekit/-/codekit-2.0.17.tgz#f4a03909cd067644a1df8b4b4596cf9e5ec2af5a"
+  integrity sha512-b0GLhzb5QM0xMKTHE7rv34VgVcTpnbpDS6MwFEtNyacJC5w8HjhH8XAhtFT6A/OyNYT3t+jAkk1sWtCv2X/qjg==
   dependencies:
     crypto-js "^4.1.1"
 
