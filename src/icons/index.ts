@@ -1,5 +1,5 @@
-import * as LucideIcon from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 
 export const Icons = {
-	...LucideIcon,
+	...LucideIcons,
 };

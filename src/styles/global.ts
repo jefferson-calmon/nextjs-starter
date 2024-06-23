@@ -109,6 +109,11 @@ const globalStyle = createGlobalStyle`
         background: rgba(0, 0, 0, .5);
     }
 
+    .lucide {
+        width: 1em;
+        height: 1em;
+    }
+
     @media (max-width: 1024px) {
         .content {
             width: 91%;
