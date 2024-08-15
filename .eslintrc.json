@@ -1,3 +1,17 @@
 {
-  "extends": ["next/core-web-vitals", "@rocketseat/eslint-config/next"]
+	"extends": [
+		"next",
+		"next/core-web-vitals",
+		"@rocketseat/eslint-config/next",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"prettier"
+	],
+	"rules": {
+		"semi": 0,
+		"prefer-const": "error",
+		"@typescript-eslint/no-unused-vars": "error",
+		"@typescript-eslint/no-explicit-any": "error",
+		"prettier/prettier": ["error", { "semi": true }]
+	}
 }
