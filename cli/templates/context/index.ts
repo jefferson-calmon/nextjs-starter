@@ -1,4 +1,4 @@
-import { TemplateProps } from '..';
+import { TemplateProps } from '../index.ts';
 
 export const Context = (
 	props: TemplateProps
