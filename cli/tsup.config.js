@@ -3,7 +3,7 @@ const config = {
 	format: ['cjs'],
 	outDir: 'dist',
 	minify: true,
-	sourcemap: true,
+	sourcemap: false,
 };
 
 export default config;
