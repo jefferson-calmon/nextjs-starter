@@ -1,3 +1,5 @@
+import { TemplateProps } from '..';
+
 export const BaseModelFileName = 'BaseModel.ts';
 
 export const BaseModel = () => `export interface BaseModel {
@@ -21,7 +23,7 @@ export type WithoutBaseProps<T> = Omit<T, 'id' | 'updatedAt' | 'createdAt'>;
 export type WithoutTimeProps<T> = Omit<T, 'updatedAt' | 'createdAt'>;
 `;
 
-export const Model = (props: { itemName: string }) => {
+export const Model = (props: TemplateProps) => {
 	const folders = props.itemName.split('/').length - 1;
 
 	const modelName = props.itemName.split('/').join('');

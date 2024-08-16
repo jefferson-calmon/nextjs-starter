@@ -9,6 +9,7 @@ import {
 	BaseModelFileName,
 	Model,
 } from '../templates/model/index.ts';
+import { Context } from '../templates/context/index.ts';
 
 type Item = z.infer<typeof CreateSchema>[0];
 
@@ -61,13 +62,13 @@ export function getFiles(item: Item, itemName: string) {
 	// 	});
 	// }
 
-	// if (item === 'context') {
-	// 	files.push({
-	// 		name: [itemName, 'Context', '.ts'].join(''),
-	// 		dir: path.join(path.dirname(''), 'src', 'contexts'),
-	// 		content: '',
-	// 	});
-	// }
+	if (item === 'context') {
+		files.push({
+			name: [itemName, 'Context', '.tsx'].join(''),
+			dir: path.join(path.dirname(''), 'src', 'contexts'),
+			content: Context({ itemName }),
+		});
+	}
 
 	return files;
 }
