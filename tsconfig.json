@@ -13,11 +13,12 @@
 		"jsx": "preserve",
 		"incremental": true,
 		"baseUrl": "./src",
+		"allowImportingTsExtensions": true,
 		"plugins": [
 			{
 				"name": "next"
 			}
-		],
+		]
 		// "paths": {
 		// 	"@/*": ["./src/*"]
 		// }
