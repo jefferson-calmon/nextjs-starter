@@ -11,7 +11,10 @@ type RootLayoutProps = Readonly<{
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: [app.name].join(' - '),
+	title: {
+		template: `%s - ${app.name}`,
+		default: app.name,
+	},
 	description: app.description,
 	keywords: app.keywords,
 	themeColor: '#ffffff',
