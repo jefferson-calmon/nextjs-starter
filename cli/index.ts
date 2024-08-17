@@ -3,16 +3,14 @@
 
 import { Command } from 'commander';
 
-// import pkg from '../package.json' assert { type: 'json' };
+import pkg from '../package.json' assert { type: 'json' };
 import { create } from './commands/create.ts';
 import { setup } from './commands/setup.ts';
 
 const program = new Command();
 
-console.log('');
-
 program
-	.version('', '-v, --version', 'Exibir a versão atual do app')
+	.version(pkg.version, '-v, --version', 'Exibir a versão atual do app')
 	.name('app')
 	.description(
 		'CLI feita para automatizar tarefas repetitivas dentro do app'
