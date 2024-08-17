@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as prompt from '@clack/prompts';
+import chalk from 'chalk';
 import { z } from 'zod';
 import { join } from 'path';
-import chalk from 'chalk';
 
 import * as H from '../helpers/create.helpers.ts';
 import { writeFile } from '../utils/fs.ts';
