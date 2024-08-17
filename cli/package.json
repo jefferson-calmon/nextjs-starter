@@ -7,7 +7,8 @@
     "scripts": {
         "start": "node --no-warnings=ExperimentalWarning --loader ts-node/esm index.ts",
         "clean": "rimraf ./dist/ ./exec/",
-        "build": "npm run clean && tsup"
+        "build": "npm run clean && tsup",
+        "pub": "npm run build && gt custom"
     },
     "dependencies": {
         "@clack/prompts": "^0.7.0",
