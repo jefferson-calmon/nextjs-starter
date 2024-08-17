@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 		template: `%s - ${app.name}`,
 		default: app.name,
 	},
+	metadataBase: new URL('http://localhost:3000'),
 	description: app.description,
 	keywords: app.keywords,
 	authors: [{ name: app.author.name, url: app.author.url }],
