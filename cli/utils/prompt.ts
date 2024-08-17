@@ -14,6 +14,11 @@ type Option<Value> = Value extends Primitive
 			hint?: string;
 		};
 
+export function error(message: string) {
+	prompt.log.error(message);
+	process.exit();
+}
+
 export async function select<Value extends string>(
 	props: prompt.SelectOptions<Option<Value>[], Value>
 ) {

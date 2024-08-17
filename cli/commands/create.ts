@@ -6,7 +6,7 @@ import { exec } from '../utils/exec.ts';
 import { createFile } from '../helpers/index.ts';
 
 export const CreateSchema = z.tuple([
-	z.enum(['model', 'component', 'context']),
+	z.enum(['model', 'context', 'env']),
 	z.string(),
 	z.object({}),
 	z.object({}).optional(),
@@ -15,7 +15,7 @@ export const CreateSchema = z.tuple([
 export async function create(...args: any[]) {
 	const [item, name] = CreateSchema.parse(args);
 
-	const files = H.getFiles(item, name);
+	const files = await H.getFiles(item, name);
 	const lastFile = files[files.length - 1];
 
 	for (const file of files) {
