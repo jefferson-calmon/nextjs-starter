@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
 import '../styles/global.css';
@@ -10,6 +10,11 @@ type RootLayoutProps = Readonly<{
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const viewport: Viewport = {
+	themeColor: '#fff',
+	colorScheme: 'normal',
+};
+
 export const metadata: Metadata = {
 	title: {
 		template: `%s - ${app.name}`,
@@ -17,7 +22,6 @@ export const metadata: Metadata = {
 	},
 	description: app.description,
 	keywords: app.keywords,
-	themeColor: '#ffffff',
 	authors: [{ name: app.author.name, url: app.author.url }],
 	robots: 'index, follow',
 	openGraph: {
