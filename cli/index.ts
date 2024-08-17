@@ -5,6 +5,7 @@ import { Command } from 'commander';
 
 // import pkg from '../package.json' assert { type: 'json' };
 import { create } from './commands/create.ts';
+import { setup } from './commands/setup.ts';
 
 const program = new Command();
 
@@ -18,5 +19,6 @@ program
 	);
 
 program.command('create <item> <name>').action(create);
+program.command('setup <item>').action(setup);
 
 program.parse(process.argv);
