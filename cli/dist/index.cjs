@@ -83,7 +83,7 @@ export const with${r.itemName}Context = (Page: (...props: any) => JSX.Element) =
 	};
 `;function Oe(r,e){e=ze(e);let t=[];if(r==="model"){let i=_.default.join(_.default.dirname(""),"src","models",z);pe(i)||t.push({name:z,dir:_.default.join(_.default.dirname(""),"src","models"),content:fe()}),t.push({name:[e,".ts"].join(""),dir:_.default.join(_.default.dirname(""),"src","models"),content:ge({itemName:e})})}return r==="context"&&t.push({name:[e,"Context",".tsx"].join(""),dir:_.default.join(_.default.dirname(""),"src","contexts"),content:_e({itemName:e})}),t}function ze(r){return r.split(" ").map(G).join(" ").split("/").map(G).join("/")}var Ce=require("child_process");function v(r){return new Promise(e=>{(0,Ce.exec)(r,(t,i,n)=>{e({error:t,stderr:n,stdout:i})})})}var J=b(require("chalk"),1),Ae=require("@clack/prompts"),be=require("path");async function H(r){let e=(0,Ae.spinner)(),[t,i,n]=[J.default.cyan(r.name),J.default.magenta(r.dir),(0,be.join)(r.dir,r.name)];e.start(`Criando arquivo ${t} em ${i}`);let{success:s,error:o}=await de(n,r.content),l=s?"foi criado com sucesso":"falhou ao ser criado";return e.stop(`O arquivo ${t} ${l} em ${i}`),{success:s,error:o,path:n}}var Ke=x.z.tuple([x.z.enum(["model","component","context"]),x.z.string(),x.z.object({}),x.z.object({}).optional()]);async function xe(...r){let[e,t]=Ke.parse(r),i=Oe(e,t),n=i[i.length-1];for(let s of i)await H(s).then(async o=>{s===n&&await v(`code ${o.path}`)})}var $=require("zod");var K=b(require("path"),1);var we=()=>`export function api(path: string, init?: RequestInit) {
 	const baseUrl = '';
-	const url = new URL(path, baseUrl);
+	const url = new URL('/api'.concat(path), baseUrl);
 
 	return fetch(url, init);
 }
