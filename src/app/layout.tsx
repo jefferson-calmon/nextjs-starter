@@ -1,7 +1,8 @@
+import 'styles/global.css';
+
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
-import '../styles/global.css';
 import { app } from 'config/app';
 
 type RootLayoutProps = Readonly<{

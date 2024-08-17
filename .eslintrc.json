@@ -4,7 +4,10 @@
 		"next/core-web-vitals",
 		"@rocketseat/eslint-config/next"
 	],
+	"plugins": ["simple-import-sort"],
 	"rules": {
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
 		"no-empty-pattern": "off",
 		"prefer-const": "error",
 		"@typescript-eslint/no-unused-vars": "error",
@@ -24,5 +27,29 @@
 				"jsxSingleQuote": false
 			}
 		]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["*.tsx", "*.ts"],
+			"rules": {
+				"simple-import-sort/imports": [
+					"error",
+					{
+						"groups": [
+							["^\\u0000"],
+							["^react", "^next"],
+							["^@?\\w"],
+							[
+								"^(utils|services|hooks|types|contexts|components|middlewares|services|styles|types|assets|config|constants|controllers|helpers|icons|layouts|models|views)(/.*|$)",
+								"^\\."
+							],
+							["^[^.]"],
+							["^"],
+							["^\\."]
+						]
+					}
+				]
+			}
+		}
+	]
 }
