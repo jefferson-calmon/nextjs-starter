@@ -15,6 +15,18 @@ export function checkIfFileExists(filePath: string) {
 	return fs.existsSync(filePath);
 }
 
+export async function readFile(path: string) {
+	return new Promise<string>((resolve) => {
+		fse.readFile(
+			path,
+			{
+				encoding: 'utf-8',
+			},
+			(_, data) => resolve(data)
+		);
+	});
+}
+
 export async function writeFile(path: string, content: string) {
 	return new Promise<WriteFileResult>((resolve) => {
 		fse.outputFile(path, content, (err) => {
