@@ -2,17 +2,27 @@
 	"extends": [
 		"next",
 		"next/core-web-vitals",
-		"@rocketseat/eslint-config/next",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended",
-		"prettier"
+		"@rocketseat/eslint-config/next"
 	],
 	"rules": {
-		"semi": 0,
 		"no-empty-pattern": "off",
 		"prefer-const": "error",
 		"@typescript-eslint/no-unused-vars": "error",
 		"@typescript-eslint/no-explicit-any": "error",
-		"prettier/prettier": ["error", { "semi": true }]
+		"prettier/prettier": [
+			"error",
+			{
+				"printWidth": 80,
+				"tabWidth": 4,
+				"singleQuote": true,
+				"trailingComma": "all",
+				"quoteProps": "as-needed",
+				"arrowParens": "always",
+				"semi": true,
+				"endOfLine": "auto",
+				"useTabs": true,
+				"jsxSingleQuote": false
+			}
+		]
 	}
 }
