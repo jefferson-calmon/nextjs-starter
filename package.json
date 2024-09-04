@@ -7,6 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "lint:style": "stylelint **/*.css --fix",
         "app": "node cli/dist/index.cjs"
     },
     "dependencies": {
@@ -29,6 +30,8 @@
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-simple-import-sort": "^12.1.1",
         "postcss": "^8",
+        "stylelint": "^16.9.0",
+        "stylelint-config-clean-order": "^6.1.0",
         "tailwindcss": "^3.4.1",
         "typescript": "^5"
     }
