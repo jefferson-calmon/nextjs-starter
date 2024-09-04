@@ -5,6 +5,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { NextBricksProvider } from 'next-bricks';
 
+import { CodeKitConfig } from 'codekit';
+
 import { app } from 'config/app';
 
 type RootLayoutProps = Readonly<{
@@ -67,6 +69,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="pt-BR">
 			<body className={inter.className}>
+				<CodeKitConfig />
+
 				<NextBricksProvider appName={app.name}>
 					{children}
 				</NextBricksProvider>
