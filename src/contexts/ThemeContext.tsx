@@ -52,6 +52,7 @@ export function ThemeProvider(props: ThemeContextProps) {
 			}}
 		>
 			<div
+				className="theme-provider"
 				style={
 					{
 						'--color-primary': currentTheme.colors.primary,
