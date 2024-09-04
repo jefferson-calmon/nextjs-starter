@@ -1,7 +1,9 @@
 import 'styles/global.css';
+import 'next-bricks/dist/index.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import { NextBricksProvider } from 'next-bricks';
 
 import { app } from 'config/app';
 
@@ -64,7 +66,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="pt-BR">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<NextBricksProvider appName={app.name}>
+					{children}
+				</NextBricksProvider>
+			</body>
 		</html>
 	);
 }
