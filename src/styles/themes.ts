@@ -43,8 +43,8 @@ export const light: Theme = {
 		foreground: '#f1f3f4',
 		line: '#e7e7e9',
 
-		title: 'rgb(0 0 0 / 100%)',
-		text: 'rgb(0 0 0 / 75%)',
+		title: '#000',
+		text: 'rgba(0, 0, 0, .75)',
 	},
 };
 
