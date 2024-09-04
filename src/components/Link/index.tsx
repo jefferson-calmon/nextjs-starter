@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo } from 'react';
 import { Link as NBLink, LinkProps as NBLinkProps } from 'next-bricks';
 

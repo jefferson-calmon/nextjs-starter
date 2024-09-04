@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo } from 'react';
 import { Button as NBButton, ButtonProps as NBButtonProps } from 'next-bricks';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { Input as NBInput, InputProps as NBInputProps } from 'next-bricks';
 
 import { cn } from 'utils/cn';
