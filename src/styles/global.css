@@ -5,11 +5,12 @@
 *,
 *::before,
 *::after {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	outline: none;
+
 	border: none;
-	box-sizing: border-box;
+	outline: none;
 
 	-webkit-tap-highlight-color: transparent;
 }
@@ -47,8 +48,8 @@
 
 ::-webkit-scrollbar {
 	width: 6px;
-	background: transparent;
 	padding-right: 3px;
+	background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -73,11 +74,14 @@ html,
 body,
 #root {
 	position: relative;
+
 	min-height: 100vh;
-	color: var(--color-text);
-	background: var(--color-background);
+
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.5;
+	color: var(--color-text);
+
+	background: var(--color-background);
 }
 
 h1,
@@ -95,8 +99,8 @@ ol {
 }
 
 a {
-	text-decoration: none;
 	color: inherit;
+	text-decoration: none;
 }
 
 button {
@@ -104,19 +108,18 @@ button {
 }
 
 img {
-	user-select: none;
 	pointer-events: none;
-
+	user-select: none;
 	max-width: 100%;
 	height: auto;
 }
 
 i {
-	font-style: normal;
 	font-weight: normal !important;
+	font-style: normal;
 	font-variant: normal;
-	text-transform: none;
 	line-height: 1;
+	text-transform: none;
 }
 
 .shadow {
