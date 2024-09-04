@@ -37,16 +37,28 @@
 					"error",
 					{
 						"groups": [
+							// Imports com caracteres especiais, como imports de side effects
 							["^\\u0000"],
-							["^react", "^next"],
+
+							// Imports dos frameworks principais, como React e Next.js
+							["^react$", "^next"],
+
+							// Imports de pacotes de terceiros
 							["^@?\\w"],
+
+							// Imports organizados por estrutura de projeto e pacotes de terceiros
 							[
-								"^(utils|services|hooks|types|contexts|components|middlewares|services|styles|types|assets|config|constants|controllers|helpers|icons|layouts|models|views)(/.*|$)",
+								// Subgrupo 1: Imports de módulos internos do projeto, como utils, components, etc.
+								"^(utils|hooks|types|contexts|components|middlewares|services|styles|assets|config|constants|controllers|helpers|icons|layouts|models|views|theme|themes)(/.*|$)",
+								// Subgrupo 3: Imports relativos (começando com './', '../', ou '.')
 								"^\\."
 							],
+
+							// Imports absolutos não cobertos pelos grupos anteriores
 							["^[^.]"],
-							["^"],
-							["^\\."]
+
+							// Grupo geral de captura para qualquer coisa não capturada anteriormente
+							["^"]
 						]
 					}
 				]
