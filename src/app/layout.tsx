@@ -8,6 +8,8 @@ import { NextBricksProvider } from 'next-bricks';
 import { CodeKitConfig } from 'codekit';
 
 import { app } from 'config/app';
+import { ContextProviders } from 'contexts';
+import { ThemeProvider } from 'contexts/ThemeContext';
 
 type RootLayoutProps = Readonly<{
 	children: React.ReactNode;
@@ -69,11 +71,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="pt-BR">
 			<body className={inter.className}>
-				<CodeKitConfig />
+				<ThemeProvider>
+					<CodeKitConfig />
 
-				<NextBricksProvider appName={app.name}>
-					{children}
-				</NextBricksProvider>
+					<NextBricksProvider appName={app.name}>
+						<ContextProviders>{children}</ContextProviders>
+					</NextBricksProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

@@ -16,17 +16,6 @@
 }
 
 :root {
-	--color-primary: var(--color-primary);
-	--color-secondary: var(--color-secondary);
-
-	--color-title: var(--color-title);
-	--color-text: var(--color-text);
-
-	--color-foreground: var(--color-surface);
-	--color-background: var(--color-background);
-
-	--color-line: var(--color-line);
-
 	--color-red-1: #e83f5b;
 	--color-red-2: #ce4a4a;
 	--color-red-3: #eb3223;
@@ -53,7 +42,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--color-surface);
+	background: var(--color-foreground);
 }
 
 .content {

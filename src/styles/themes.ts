@@ -1,12 +1,14 @@
+export type ThemeName = 'dark' | 'light';
+
 export interface Theme {
-	name: 'light' | 'dark';
+	name: ThemeName;
 
 	colors: {
 		primary: string;
 		secondary: string;
 
 		background: string;
-		surface: string;
+		foreground: string;
 		line: string;
 
 		title: string;
@@ -22,7 +24,7 @@ export const dark: Theme = {
 		secondary: '',
 
 		background: '#101010',
-		surface: '#16191C',
+		foreground: '#16191C',
 		line: '',
 
 		title: '#FFFFFF',
@@ -38,7 +40,7 @@ export const light: Theme = {
 		secondary: '',
 
 		background: '#ffffff',
-		surface: '#f1f3f4',
+		foreground: '#f1f3f4',
 		line: '#e7e7e9',
 
 		title: 'rgb(0 0 0 / 100%)',
