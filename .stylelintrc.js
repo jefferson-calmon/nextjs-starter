@@ -1,4 +1,4 @@
 /** @type {import('stylelint').Config} */
 module.exports = {
-	extends: ['stylelint-config-clean-order'],
+	extends: ['stylelint-config-clean-order', 'stylelint-config-standard-scss'],
 };
