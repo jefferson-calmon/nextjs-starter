@@ -1,9 +1,9 @@
 'use client';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { useIsomorphicLayoutEffect, useSystemTheme } from 'codekit';
+import { useSystemTheme } from 'codekit';
 import Cookies from 'js-cookie';
 
 import { Theme, ThemeName, themes } from '../styles/themes';
@@ -32,7 +32,7 @@ export function ThemeProvider(props: ThemeContextProps) {
 	const currentTheme = useMemo(() => themes[theme], [theme]);
 
 	// Effects
-	useIsomorphicLayoutEffect(() => {
+	useEffect(() => {
 		let theme = Cookies.get('theme') as ThemeName | undefined;
 
 		if (!theme && AUTO_DETECT_USER_THEME) {
