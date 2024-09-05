@@ -2,19 +2,17 @@ import 'styles/global.css';
 import 'next-bricks/dist/index.css';
 
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 
 import { CodeKitConfig } from 'codekit';
 
 import { app } from 'config/app';
 import { NextBricksContextProvider } from 'contexts/NextBricksContext';
 import { ThemeProvider } from 'contexts/ThemeContext';
+import { font } from 'styles/font';
 
 type RootLayoutProps = Readonly<{
 	children: React.ReactNode;
 }>;
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const viewport: Viewport = {
 	themeColor: '#fff',
@@ -68,8 +66,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
-		<html lang="pt-BR">
-			<body className={inter.className}>
+		<html lang="pt-BR" className={font.className}>
+			<body>
 				<ThemeProvider>
 					<CodeKitConfig />
 
