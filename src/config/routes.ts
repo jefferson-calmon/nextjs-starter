@@ -1,8 +1,8 @@
-import { build, from, generate, get } from 'helpers/routes';
+import { build, from, generate, get, Keys } from 'helpers/routes';
 
 export const relations: Record<string, string> = {};
 
-export const REFERENCES = {
+export const declarations = {
 	'/': {},
 	'#': {},
 	'*': {},
@@ -10,7 +10,15 @@ export const REFERENCES = {
 	logout: {},
 };
 
-export const formattedRoutes = generate(REFERENCES, relations);
+export const references: Record<Keys<typeof declarations>, string> = {
+	'#': '',
+	'*': '',
+	'/': '',
+
+	logout: 'Sair da conta',
+};
+
+export const formattedRoutes = generate(declarations, relations);
 
 export const routes = {
 	all: formattedRoutes,

@@ -3,6 +3,11 @@ import { KeyOf } from 'codekit';
 
 import { Route, Routes } from 'config/routes';
 type Obj = Record<string, any>;
+export type Keys<T> = T extends object
+	? {
+			[K in keyof T]: K | Keys<T[K]>;
+		}[keyof T]
+	: never;
 
 export function flattenObject<T extends object>(
 	obj: T,
