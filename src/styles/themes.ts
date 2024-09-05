@@ -20,15 +20,15 @@ export const dark: Theme = {
 	name: 'dark',
 
 	colors: {
-		primary: '',
+		primary: '#fff',
 		secondary: '',
 
-		background: '#101010',
-		foreground: '#16191C',
-		line: '',
+		background: '#000',
+		foreground: '#0a0a0a',
+		line: '#ffffff26',
 
-		title: '#FFFFFF',
-		text: '#ADB5BD',
+		title: '#EDEDED',
+		text: '#A1A1A1',
 	},
 };
 
@@ -40,8 +40,8 @@ export const light: Theme = {
 		secondary: '',
 
 		background: '#ffffff',
-		foreground: '#f1f3f4',
-		line: '#e7e7e9',
+		foreground: '#fff',
+		line: '#00000026',
 
 		title: '#000',
 		text: 'rgba(0, 0, 0, .75)',
