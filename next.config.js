@@ -7,4 +7,7 @@ module.exports = {
 	// 	ignoreBuildErrors: true,
 	// },
 	transpilePackages: ['lucide-react', 'geist'],
+	rewrites() {
+		return [{ source: '/ping', destination: '/api/ping' }];
+	},
 };
