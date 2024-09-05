@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from 'next';
 
 import { CodeKitConfig } from 'codekit';
 
+import NavigationProgressBar from 'components/NavigationProgressBar';
 import { app } from 'config/app';
 import { NextBricksContextProvider } from 'contexts/NextBricksContext';
 import { ThemeProvider } from 'contexts/ThemeContext';
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 		<html lang="pt-BR" className={font.className}>
 			<body>
 				<ThemeProvider>
+					<NavigationProgressBar />
 					<CodeKitConfig />
 
 					<NextBricksContextProvider>
