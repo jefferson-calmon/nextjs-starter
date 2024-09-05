@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useContext, useMemo, useState } from 'react';
 
-import { useIsomorphicLayoutEffect } from 'codekit';
+import { useIsomorphicLayoutEffect, useSystemTheme } from 'codekit';
 import Cookies from 'js-cookie';
 
 import { Theme, ThemeName, themes } from '../styles/themes';
@@ -19,20 +19,29 @@ export interface ThemeContextData extends Theme {
 export const ThemeContext = createContext({} as ThemeContextData);
 
 const DEFAULT_THEME_NAME: ThemeName = 'light';
+const AUTO_DETECT_USER_THEME: boolean = false;
 
 export function ThemeProvider(props: ThemeContextProps) {
 	// States
 	const [theme, setTheme] = useState<ThemeName>(DEFAULT_THEME_NAME);
+
+	// Hook para escutar o tema do sistema
+	const systemTheme = useSystemTheme();
 
 	// Memo vars
 	const currentTheme = useMemo(() => themes[theme], [theme]);
 
 	// Effects
 	useIsomorphicLayoutEffect(() => {
-		const theme = Cookies.get('theme') ?? DEFAULT_THEME_NAME;
+		let theme = Cookies.get('theme') as ThemeName | undefined;
 
-		setTheme(theme as ThemeName);
-	}, []);
+		if (!theme && AUTO_DETECT_USER_THEME) {
+			// Usa o tema do sistema caso não haja tema armazenado
+			theme = systemTheme;
+		}
+
+		setTheme(theme ?? DEFAULT_THEME_NAME);
+	}, [systemTheme]); // Dependência adicionada para atualizar quando o tema do sistema mudar
 
 	// Functions
 	function toggleTheme() {
@@ -40,6 +49,7 @@ export function ThemeProvider(props: ThemeContextProps) {
 
 		setTheme(newTheme);
 
+		// Store the new theme in local storage and cookies
 		localStorage.setItem('theme', newTheme);
 		Cookies.set('theme', newTheme, {
 			expires: 9999,
