@@ -3,12 +3,11 @@ import 'next-bricks/dist/index.css';
 
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
-import { NextBricksProvider } from 'next-bricks';
 
 import { CodeKitConfig } from 'codekit';
 
 import { app } from 'config/app';
-import { ContextProviders } from 'contexts';
+import { NextBricksContextProvider } from 'contexts/NextBricksContext';
 import { ThemeProvider } from 'contexts/ThemeContext';
 
 type RootLayoutProps = Readonly<{
@@ -74,9 +73,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 				<ThemeProvider>
 					<CodeKitConfig />
 
-					<NextBricksProvider appName={app.name}>
-						<ContextProviders>{children}</ContextProviders>
-					</NextBricksProvider>
+					<NextBricksContextProvider>
+						{children}
+					</NextBricksContextProvider>
 				</ThemeProvider>
 			</body>
 		</html>

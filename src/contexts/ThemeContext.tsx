@@ -6,13 +6,15 @@ import { createContext, useContext, useMemo, useState } from 'react';
 import { useIsomorphicLayoutEffect } from 'codekit';
 import Cookies from 'js-cookie';
 
-import { ThemeName, themes } from '../styles/themes';
+import { Theme, ThemeName, themes } from '../styles/themes';
 
 interface ThemeContextProps {
 	children: React.ReactNode;
 }
 
-export interface ThemeContextData {}
+export interface ThemeContextData extends Theme {
+	toggle: () => void;
+}
 
 export const ThemeContext = createContext({} as ThemeContextData);
 
