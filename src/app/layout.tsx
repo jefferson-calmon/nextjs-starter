@@ -1,13 +1,13 @@
 import 'styles/global.css';
-import 'next-bricks/dist/index.css';
 
 import type { Metadata, Viewport } from 'next';
 
 import { CodeKitConfig } from 'codekit';
+import 'next-bricks/dist/index.css';
 
 import NavigationProgressBar from 'components/NavigationProgressBar';
 import { app } from 'config/app';
-import { NextBricksContextProvider } from 'contexts/NextBricksContext';
+import { ContextProviders } from 'contexts';
 import { ThemeProvider } from 'contexts/ThemeContext';
 import { font } from 'styles/font';
 
@@ -73,9 +73,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 					<NavigationProgressBar />
 					<CodeKitConfig />
 
-					<NextBricksContextProvider>
-						{children}
-					</NextBricksContextProvider>
+					<ContextProviders>{children}</ContextProviders>
 				</ThemeProvider>
 			</body>
 		</html>
