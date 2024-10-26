@@ -51,7 +51,7 @@ export async function addDependencies({
 		'',
 	);
 
-	console.log(`Instalando ${type}: ${list}`);
+	console.log(`Instalando ${type} ${list}`);
 
 	const { error, stderr } = await exec(
 		`npm install ${dev ? '--save-dev' : '--save'} ${dependencies.join(' ')}`,
