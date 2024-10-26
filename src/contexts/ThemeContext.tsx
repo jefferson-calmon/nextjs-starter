@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { useSystemTheme, cookies } from 'codekit';
+import { cookies, useSystemTheme } from 'codekit';
 
 import { Theme, ThemeName, themes } from '../styles/themes';
 
