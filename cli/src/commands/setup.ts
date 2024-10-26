@@ -4,7 +4,7 @@ import { z } from 'zod';
 import * as H from '../helpers/setup.helpers.ts';
 
 export const SetupSchema = z.tuple([
-	z.enum(['api']),
+	z.enum(['api', 'firebase']),
 	z.object({}),
 	z.object({}).optional(),
 ]);

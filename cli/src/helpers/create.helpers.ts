@@ -3,9 +3,6 @@ import chalk from 'chalk';
 import path from 'path';
 import { z } from 'zod';
 
-import { checkIfFileExists, readFile } from '../utils/fs.ts';
-import { capitalize } from '../utils/index.ts';
-import * as prompt from '../utils/prompt.ts';
 import { CreateSchema } from '../commands/create.ts';
 import { Env } from '../templates/config/env.ts';
 import { Context } from '../templates/context/index.ts';
@@ -14,6 +11,9 @@ import {
 	BaseModelFileName,
 	Model,
 } from '../templates/model/index.ts';
+import { checkIfFileExists, readFile } from '../utils/fs.ts';
+import { capitalize } from '../utils/index.ts';
+import * as prompt from '../utils/prompt.ts';
 import { AppFile } from './index.ts';
 
 type Item = z.infer<typeof CreateSchema>[0];

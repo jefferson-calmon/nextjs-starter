@@ -1,4 +1,4 @@
-import { ExecException, exec as execSync } from 'child_process';
+import { exec as execSync, ExecException } from 'child_process';
 
 export interface ExecResponse {
 	error: ExecException | null;
