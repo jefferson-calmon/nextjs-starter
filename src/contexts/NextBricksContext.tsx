@@ -2,6 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { createContext, useContext } from 'react';
+
 import { NextBricksProvider } from 'next-bricks';
 
 import { app } from 'config/app';
