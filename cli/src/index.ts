@@ -3,7 +3,7 @@
 
 import { Command } from 'commander';
 
-import pkg from '../package.json' assert { type: 'json' };
+import pkg from '../../package.json' assert { type: 'json' };
 import { create } from './commands/create.ts';
 import { setup } from './commands/setup.ts';
 

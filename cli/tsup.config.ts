@@ -1,7 +1,7 @@
 import { Options } from 'tsup';
 
 const config: Options = {
-	entryPoints: ['index.ts'],
+	entryPoints: ['src/index.ts'],
 	format: ['cjs'],
 	outDir: 'dist',
 	clean: true,

@@ -2,8 +2,8 @@
 import { z } from 'zod';
 
 import * as H from '../helpers/create.helpers.ts';
-import { exec } from '../utils/exec.ts';
 import { createFile } from '../helpers/index.ts';
+import { exec } from '../utils/exec.ts';
 
 export const CreateSchema = z.tuple([
 	z.enum(['model', 'context', 'env']),

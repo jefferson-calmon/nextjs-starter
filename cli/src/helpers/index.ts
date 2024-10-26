@@ -1,6 +1,7 @@
-import chalk from 'chalk';
 import { spinner } from '@clack/prompts';
+import chalk from 'chalk';
 import { join } from 'path';
+
 import { writeFile } from '../utils/fs.ts';
 
 export interface AppFile {
@@ -20,7 +21,7 @@ export async function createFile(file: AppFile) {
 
 	loading.start(`Criando arquivo ${name} em ${dir}`);
 
-	const { success, error } = await writeFile(path, file.content);
+	const { success, error } = await writeFile(path, file.content.trim());
 
 	const message = success ? 'foi criado com sucesso' : 'falhou ao ser criado';
 

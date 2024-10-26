@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import path from 'path';
 import chalk from 'chalk';
+import path from 'path';
 import { z } from 'zod';
 
-import * as prompt from '../utils/prompt.ts';
-import { capitalize } from '../utils/index.ts';
-import { CreateSchema } from '../commands/create.ts';
 import { checkIfFileExists, readFile } from '../utils/fs.ts';
+import { capitalize } from '../utils/index.ts';
+import * as prompt from '../utils/prompt.ts';
+import { CreateSchema } from '../commands/create.ts';
+import { Env } from '../templates/config/env.ts';
+import { Context } from '../templates/context/index.ts';
 import {
 	BaseModel,
 	BaseModelFileName,
 	Model,
 } from '../templates/model/index.ts';
-import { Context } from '../templates/context/index.ts';
 import { AppFile } from './index.ts';
-import { Env } from '../templates/config/env.ts';
 
 type Item = z.infer<typeof CreateSchema>[0];
 
@@ -43,7 +43,7 @@ function modelFiles({ itemName }: ItemFilesProps) {
 		path.dirname(''),
 		'src',
 		'models',
-		BaseModelFileName
+		BaseModelFileName,
 	);
 	const hasBaseModel = checkIfFileExists(baseModelPath);
 
@@ -113,7 +113,7 @@ async function envFiles({ itemName }: ItemFilesProps) {
 
 	if (env.includes(varName)) {
 		prompt.error(
-			`Variável ${chalk.cyan(varName)} já existe nas variáveis de ambiente`
+			`Variável ${chalk.cyan(varName)} já existe nas variáveis de ambiente`,
 		);
 	}
 

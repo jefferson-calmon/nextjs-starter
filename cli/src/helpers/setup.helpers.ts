@@ -2,10 +2,10 @@
 import path from 'path';
 import { z } from 'zod';
 
-import { SetupSchema } from '../commands/setup.ts';
-import { createFile } from './index.ts';
-import { ApiService } from '../templates/services/api.ts';
 import { exec } from '../utils/exec.ts';
+import { SetupSchema } from '../commands/setup.ts';
+import { ApiService } from '../templates/services/api.ts';
+import { createFile } from './index.ts';
 
 type Item = z.infer<typeof SetupSchema>[0];
 // type Options = z.infer<typeof SetupSchema>[1];
