@@ -44,27 +44,26 @@ export async function addDependencies({
 	dependencies,
 	dev = false,
 }: DependencyOptions) {
-	const loading = spinner();
-
 	const type = dev ? 'dependências de dev' : 'dependências';
 	const list = dependencies.reduce(
-		(acc, dep) => (acc += `, ${chalk.cyan(dep)}`),
+		(acc, dep, index) =>
+			(acc += `${index === 0 ? '' : ', '}${chalk.cyan(dep)}`),
 		'',
 	);
 
-	loading.start(`Instalando ${type}: ${list}`);
+	console.log(`Instalando ${type}: ${list}`);
 
 	const { error, stderr } = await exec(
-		`npm install --quiet --no-progress --silent ${dev ? '--save-dev' : '--save'} ${dependencies.join(' ')}`,
+		`npm install ${dev ? '--save-dev' : '--save'} ${dependencies.join(' ')}`,
 	);
 
 	if (error) {
-		loading.stop(`Falha ao instalar ${type}`);
-		console.error(stderr);
+		console.log(chalk.yellow(`Falha ao instalar ${type}`));
+		console.error(chalk.red(stderr));
 		return { success: false, error };
 	}
 
-	loading.stop(`As ${type} foram instaladas com sucesso`);
+	console.log(`As ${type} foram instaladas com sucesso`);
 
 	return { success: true };
 }
