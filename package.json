@@ -11,6 +11,7 @@
         "app": "node cli/dist/index.cjs"
     },
     "dependencies": {
+        "@jefferson-calmon/eslint-config": "^0.0.1",
         "@t3-oss/env-nextjs": "^0.11.1",
         "codekit": "^2.11.0",
         "framer-motion": "^11.11.10",
@@ -25,15 +26,10 @@
         "zod": "^3.23.8"
     },
     "devDependencies": {
-        "@rocketseat/eslint-config": "^2.2.2",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "eslint": "^8",
-        "eslint-config-next": "14.2.5",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
-        "eslint-plugin-simple-import-sort": "^12.1.1",
         "postcss": "^8",
         "stylelint": "^16.9.0",
         "stylelint-config-clean-order": "^6.1.0",
