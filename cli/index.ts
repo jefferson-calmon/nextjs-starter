@@ -13,7 +13,7 @@ program
 	.version(pkg.version, '-v, --version', 'Exibir a versão atual do app')
 	.name('app')
 	.description(
-		'CLI feita para automatizar tarefas repetitivas dentro do app'
+		'CLI feita para automatizar tarefas repetitivas dentro do app',
 	);
 
 program.command('create <item> <name>').action(create);

@@ -6,9 +6,8 @@
     "type": "module",
     "scripts": {
         "start": "node --no-warnings=ExperimentalWarning --loader ts-node/esm index.ts",
-        "clean": "rimraf ./dist/ ./exec/",
-        "build": "npm run clean && tsup",
-        "pub": "gt && npm run build && git add . && git commit -m \"🧹 chore(cli): Generate new cli package build\""
+        "build": "tsup",
+        "pub": "npm run build && gt && git push"
     },
     "dependencies": {
         "@clack/prompts": "^0.7.0",

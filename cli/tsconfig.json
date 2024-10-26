@@ -13,5 +13,5 @@
         "types": ["node"]
     },
     "exclude": ["node_modules"],
-    "include": ["**/*.ts", "*.ts", "bin/*.ts"]
+    "include": ["**/*.ts", "*.ts", "bin/*.ts", "tsup.config.js"]
 }
