@@ -3,8 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { useSystemTheme } from 'codekit';
-import Cookies from 'js-cookie';
+import { useSystemTheme, cookies } from 'codekit';
 
 import { Theme, ThemeName, themes } from '../styles/themes';
 
@@ -33,7 +32,7 @@ export function ThemeProvider(props: ThemeContextProps) {
 
 	// Effects
 	useEffect(() => {
-		let theme = Cookies.get('theme') as ThemeName | undefined;
+		let theme = cookies.get('theme') as ThemeName | undefined;
 
 		if (!theme && AUTO_DETECT_USER_THEME) {
 			// Usa o tema do sistema caso não haja tema armazenado
@@ -51,7 +50,7 @@ export function ThemeProvider(props: ThemeContextProps) {
 
 		// Store the new theme in local storage and cookies
 		localStorage.setItem('theme', newTheme);
-		Cookies.set('theme', newTheme, {
+		cookies.set('theme', newTheme, {
 			expires: 9999,
 		});
 	}
