@@ -47,9 +47,12 @@ export async function addDependencies({
 	const loading = spinner();
 
 	const type = dev ? 'dependências de dev' : 'dependências';
-	const list = dependencies.map(chalk.cyan);
+	const list = dependencies.reduce(
+		(acc, dep) => (acc += `, ${chalk.cyan(dep)}`),
+		'',
+	);
 
-	loading.start(`Instalando ${type}: ${list.join(', ')}`);
+	loading.start(`Instalando ${type}: ${list}`);
 
 	const { error, stderr } = await exec(
 		`npm install --quiet --no-progress --silent ${dev ? '--save-dev' : '--save'} ${dependencies.join(' ')}`,
