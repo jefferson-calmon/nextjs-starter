@@ -1,5 +1,5 @@
 export const app = {
-	id: 'nextjs-starter',
+	id: 'next-starter',
 	name: 'App',
 	description: '',
 	site: '',
