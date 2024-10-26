@@ -3,7 +3,7 @@
 import { Input as NBInput, InputProps as NBInputProps } from 'next-bricks';
 
 import { cn } from 'utils/cn';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 export interface InputProps extends NBInputProps {}
 

@@ -7,7 +7,7 @@ import { clearSiteData, debounce, useBoolean } from 'codekit';
 
 import Button from 'components/Button';
 import { cn } from 'utils/cn';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const timeoutInSeconds = 15;
 

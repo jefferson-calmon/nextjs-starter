@@ -5,7 +5,7 @@ import { Link as NBLink, LinkProps as NBLinkProps } from 'next-bricks';
 
 import { Route, routes } from 'config/routes';
 import { cn } from 'utils/cn';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 export interface LinkProps extends NBLinkProps {
 	to?: string & Route;
