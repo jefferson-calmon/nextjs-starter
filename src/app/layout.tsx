@@ -32,15 +32,15 @@ export const metadata: Metadata = {
 	robots: 'index, follow',
 	openGraph: {
 		type: 'website',
-		url: `https://${app.site}`,
-		siteName: app.site,
+		url: app.url,
+		siteName: new URL(app.url).hostname,
 		title: app.name,
 		description: app.description,
 		images: ['/og.png'],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		site: app.site,
+		site: app.url,
 		title: app.name,
 		description: app.description,
 		images: ['/og.png'],

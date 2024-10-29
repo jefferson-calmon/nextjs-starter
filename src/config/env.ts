@@ -6,9 +6,13 @@ export const env = createEnv({
 		APP_URL: z.string().url(),
 	},
 
-	client: {},
+	client: {
+		NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID: z.string(),
+},
 
 	runtimeEnv: {
+		NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID,
+
 		APP_URL: process.env.APP_URL,
 	},
 });
