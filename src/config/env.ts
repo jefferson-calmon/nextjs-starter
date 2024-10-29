@@ -3,12 +3,12 @@ import { z } from 'zod';
 
 export const env = createEnv({
 	server: {
-		URL: z.string().url(),
+		APP_URL: z.string().url(),
 	},
 
 	client: {},
 
 	runtimeEnv: {
-		URL: process.env.URL,
+		APP_URL: process.env.APP_URL,
 	},
 });

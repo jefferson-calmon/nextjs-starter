@@ -10,7 +10,10 @@ export function getOrigin(): string {
 	const isBrowser = typeof window !== 'undefined';
 	const url = isBrowser
 		? window.location.origin
-		: process.env.URL || process.env.VERCEL_URL || DEFAULT_URL;
+		: process.env.APP_URL ||
+			process.env.URL ||
+			process.env.VERCEL_URL ||
+			DEFAULT_URL;
 
 	if (process.env.NEXT_PUBLIC_ENVIRONMENT) {
 		const environment = process.env.NEXT_PUBLIC_ENVIRONMENT;
