@@ -22,7 +22,7 @@ export async function readFile(path: string) {
 			{
 				encoding: 'utf-8',
 			},
-			(_, data) => resolve(data)
+			(_, data) => resolve(data),
 		);
 	});
 }

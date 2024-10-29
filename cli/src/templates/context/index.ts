@@ -1,7 +1,7 @@
 import { TemplateProps } from '../index.ts';
 
 export const Context = (
-	props: TemplateProps
+	props: TemplateProps,
 ) => `/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { createContext, useContext } from 'react';
 

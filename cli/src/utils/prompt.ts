@@ -20,7 +20,7 @@ export function error(message: string) {
 }
 
 export async function select<Value extends string>(
-	props: prompt.SelectOptions<Option<Value>[], Value>
+	props: prompt.SelectOptions<Option<Value>[], Value>,
 ) {
 	const response = await prompt.select(props);
 

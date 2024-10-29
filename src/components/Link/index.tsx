@@ -1,10 +1,12 @@
 'use client';
 
 import { useMemo } from 'react';
+
 import { Link as NBLink, LinkProps as NBLinkProps } from 'next-bricks';
 
 import { Route, routes } from 'config/routes';
 import { cn } from 'utils/cn';
+
 import styles from './styles.module.css';
 
 export interface LinkProps extends NBLinkProps {

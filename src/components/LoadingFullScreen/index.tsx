@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Loading } from 'next-bricks';
 
 import { clearSiteData, debounce, useBoolean } from 'codekit';
+import { Loading } from 'next-bricks';
 
 import Button from 'components/Button';
 import { cn } from 'utils/cn';
+
 import styles from './styles.module.css';
 
 const timeoutInSeconds = 15;

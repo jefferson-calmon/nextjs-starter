@@ -1,10 +1,12 @@
 'use client';
 
 import { useMemo } from 'react';
+
 import { Button as NBButton, ButtonProps as NBButtonProps } from 'next-bricks';
 
 import { Route, routes } from 'config/routes';
 import { cn } from 'utils/cn';
+
 import styles from './styles.module.css';
 
 export interface ButtonProps extends NBButtonProps {
