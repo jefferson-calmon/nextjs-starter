@@ -28,7 +28,7 @@ export function createSetup(item: Item) {
 
 async function apiSetupAction() {
 	const result = await createFile({
-		dir: path.join(path.dirname(''), 'services'),
+		dir: path.join(path.resolve('src'), 'services'),
 		name: 'api.ts',
 		content: ApiService(),
 	});
@@ -42,31 +42,31 @@ async function firebaseSetupAction() {
 	});
 
 	await createFile({
-		dir: path.join(path.dirname(''), 'services', 'firebase'),
+		dir: path.join(path.resolve('src'), 'services', 'firebase'),
 		name: 'errors.ts',
 		content: FirebaseServiceErrors(),
 	});
 
 	await createFile({
-		dir: path.join(path.dirname(''), 'services', 'firebase'),
+		dir: path.join(path.resolve('src'), 'services', 'firebase'),
 		name: 'config.ts',
 		content: FirebaseServiceConfig(),
 	});
 
 	await createFile({
-		dir: path.join(path.dirname(''), 'services', 'firebase', 'client'),
+		dir: path.join(path.resolve('src'), 'services', 'firebase', 'client'),
 		name: 'index.ts',
 		content: FirebaseServiceClient(),
 	});
 
 	await createFile({
-		dir: path.join(path.dirname(''), 'services', 'firebase', 'server'),
+		dir: path.join(path.resolve('src'), 'services', 'firebase', 'server'),
 		name: 'index.ts',
 		content: FirebaseServiceServer(),
 	});
 
 	await createFile({
-		dir: path.join(path.dirname(''), 'services', 'firebase', 'server'),
+		dir: path.join(path.resolve('src'), 'services', 'firebase', 'server'),
 		name: 'serviceAccount.ts',
 		content: FirebaseServiceServerServiceAccount(),
 	});
