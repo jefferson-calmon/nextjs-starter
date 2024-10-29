@@ -21,19 +21,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+	metadataBase: new URL(app.url),
 	title: {
-		template: `%s - ${app.name}`,
 		default: app.name,
+		template: `%s - ${app.name}`,
 	},
-	metadataBase: new URL('http://localhost:3000'),
 	description: app.description,
 	keywords: app.keywords,
+	robots: {
+		index: true,
+		follow: true,
+	},
+	verification: {
+		google: app.googleSiteVerificationId,
+	},
 	authors: [{ name: app.author.name, url: app.author.url }],
-	robots: 'index, follow',
 	openGraph: {
 		type: 'website',
 		url: app.url,
-		siteName: new URL(app.url).hostname,
+		siteName: app.name,
 		title: app.name,
 		description: app.description,
 		images: ['/og.png'],
@@ -46,20 +52,8 @@ export const metadata: Metadata = {
 		images: ['/og.png'],
 	},
 	icons: {
-		icon: [
-			{
-				rel: 'icon',
-				type: 'image/png',
-				sizes: '32x32',
-				url: '/favicon-32x32.png',
-			},
-			{
-				rel: 'icon',
-				type: 'image/png',
-				sizes: '16x16',
-				url: '/favicon-16x16.png',
-			},
-		],
+		icon: '/favicon.ico',
+		shortcut: '/favicon.png',
 		apple: '/apple-touch-icon.png',
 	},
 	manifest: '/site.webmanifest',
