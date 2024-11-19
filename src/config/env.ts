@@ -7,7 +7,7 @@ export const env = createEnv({
 	},
 
 	client: {
-		NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID: z.string(),
+		NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID: z.string().optional(),
 	},
 
 	runtimeEnv: {
