@@ -3,5 +3,6 @@
 		// "next/core-web-vitals",
 		"@jefferson-calmon/eslint-config/react",
 		"@jefferson-calmon/eslint-config/next"
-	]
+	],
+	"ignorePatterns": ["**/*.css"]
 }
