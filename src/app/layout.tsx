@@ -22,6 +22,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	metadataBase: new URL(app.url),
+	applicationName: app.name,
 	title: {
 		default: app.name,
 		template: `%s - ${app.name}`,
