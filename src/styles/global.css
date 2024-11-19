@@ -30,11 +30,6 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
-::before,
-::after {
-	content: '';
-}
-
 .content {
 	width: 1120px;
 	margin: 0 auto;
