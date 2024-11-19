@@ -1,6 +1,8 @@
 import { env } from './env';
 
-const APP_URL = new URL(env.APP_URL ?? 'https://example.com').toString();
+const APP_URL = new URL(
+	process.env.APP_URL ?? 'https://example.com',
+).toString();
 
 export const app = {
 	id: 'next-starter',
