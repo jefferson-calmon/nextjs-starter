@@ -18,7 +18,20 @@ export function chain(
 
 	if (current) {
 		const next = chain(functions, index + 1);
-		return current(next);
+
+		return async (
+			request: NextRequest,
+			event: NextFetchEvent,
+			response: NextResponse,
+		) => {
+			const nextResponse = await current(next)(request, event, response);
+
+			if (nextResponse instanceof NextResponse) {
+				return nextResponse;
+			}
+
+			return response;
+		};
 	}
 
 	return (
