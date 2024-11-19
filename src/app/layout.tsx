@@ -35,7 +35,10 @@ export const metadata: Metadata = {
 	verification: {
 		google: app.googleSiteVerificationId,
 	},
-	authors: [{ name: app.author.name, url: app.author.url }],
+	authors: app.authors.map((author) => ({
+		name: author.name,
+		url: author.url,
+	})),
 	openGraph: {
 		type: 'website',
 		url: app.url,
