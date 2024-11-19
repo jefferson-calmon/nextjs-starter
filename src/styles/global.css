@@ -108,18 +108,16 @@ pre {
 		'Liberation Mono',
 		'Courier New',
 		monospace
-	); /* 1 */
-
-	font-size: 1em; /* 4 */
+	);
+	font-size: 1em;
 	font-feature-settings: theme(
 		'fontFamily.mono[1].fontFeatureSettings',
 		normal
-	); /* 2 */
-
+	);
 	font-variation-settings: theme(
 		'fontFamily.mono[1].fontVariationSettings',
 		normal
-	); /* 3 */
+	);
 }
 
 small {
